@@ -1,7 +1,7 @@
 # daws
 
 [![Travis CI](https://travis-ci.org/olivier-schmitt/daws.svg?branch=master)](https://travis-ci.org/olivier-schmitt/daws)
-[![Docker Repository on Quay](https://travis-ci.org/olivier-schmitt/status "Docker Repository on Quay")](https://quay.io/repository/olivier_schmitt/daws/status)
+[![Docker Repository on Quay](https://quay.io/repository/olivier_schmitt/daws/status "Docker Repository on Quay")](https://quay.io/repository/olivier_schmitt/daws)
 
 
 daws is Docker image which embeds the AWS CLI.
