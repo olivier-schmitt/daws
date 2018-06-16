@@ -13,11 +13,11 @@ The Python ecosystem can be quite difficult to leverage, it never works properly
 The following command runs a Bash inside a container:
 ```shell
 docker run \
-    -it --rm -v ${PWD}:/home/aws \
+    -it --rm -v ${HOME}/cf-templates:/home/aws/work \
     -e AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION} \
     -e AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} \
     -e AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} \
-    quay.io/olivier_schmitt/daws:last \
+    quay.io/olivier_schmitt/daws:latest \
     /bin/bash
 ``` 
 

@@ -22,8 +22,12 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
+
 # AWS CLI needs the PYTHONIOENCODING environment varialbe to handle UTF-8 correctly:
 ENV PYTHONIOENCODING=UTF-8
+
+# AWS CLI allows three output modes : json, text, table
+ENV AWS_DEFAULT_OUTPUT json
 
 # man and less are needed to view 'aws <command> help'
 # ssh allows us to log in to new instances
@@ -42,18 +46,19 @@ RUN apt-get install -y \
     zip
 
 RUN adduser --home /home/aws --disabled-login --gecos '' aws
-WORKDIR /home/aws
 
 USER aws
+WORKDIR /home/aws
 
 RUN \
+    mkdir work && \
     mkdir aws && \
     virtualenv aws/env && \
     ./aws/env/bin/pip install awscli && \
     echo 'source $HOME/aws/env/bin/activate' >> .bashrc && \
     echo 'complete -C aws_completer aws' >> .bashrc
 
-VOLUME /home/aws
+VOLUME /home/aws/work
 
 WORKDIR /home/aws
 
