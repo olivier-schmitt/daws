@@ -24,12 +24,12 @@ docker run \
 
 Then execute aws CLI commands inside from inside the container.
  
-If you want to keep the container alive don't use --rm option.
+If you want to keep the container alive **don't use --rm option**.
 
 Then :
 
 ```shell
-docker run --it daws /bin/bash 
+docker start -i daws 
 ``` 
 
-Be VERY CAREFUL WITH ENV VARIABLES : they are saved with the container and could be used by an attacker.
+**Be VERY CAREFUL WITH ENV VARIABLES : they are saved with the container and could be used by an attacker.**
